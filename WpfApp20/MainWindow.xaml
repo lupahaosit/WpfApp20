@@ -1,0 +1,44 @@
+﻿<Window x:Class="WpfApp20.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp20"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="113*"/>
+            <ColumnDefinition Width="62*"/>
+            <ColumnDefinition Width="617*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="355*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <DataGrid HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="414" Margin="3,16,0,0"
+                  x:Name="DT_Animals"
+                  AutoGenerateColumns="True"
+                  IsReadOnly="False"
+                  BeginningEdit="DT_Animals_BeginningEdit"
+                  CellEditEnding="DT_Animals_CellEditEnding" Grid.ColumnSpan="3">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="remove" Click="MenuItem_Click"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+        <TextBox Margin="302,30,93,293" Text="Вид" Grid.Column="2" x:Name="Type"/>
+        <TextBox Margin="302,115,91,208" Text="животное" Grid.Column="2" x:Name="Animal"/>
+        <TextBox Margin="302,214,90,109" Text="Порода" Grid.Column="2" x:Name="Breed"/>
+        <Button Margin="305,288,153,36"  Content="Add" Grid.Column="2" Click="Button_Click"/>
+        <GroupBox Header="save as" HorizontalAlignment="Left" Height="58" VerticalAlignment="Top" Width="262" Margin="22,334,0,0"
+                  BorderThickness="3" Grid.RowSpan="3" Grid.ColumnSpan="3"/>
+        <Button Content=".docx"  Grid.Row="1"  Grid.Column="2" Margin="0,0,522,0" x:Name="docx_Save" Click="docx_Save_Click"/>
+        <Button  Content=".txt"  Grid.Row="1" Grid.Column="0" Margin="32,0,0,0" x:Name="Txt_Save" Click="Txt_Save_Click"/>
+
+
+
+    </Grid>
+</Window>
